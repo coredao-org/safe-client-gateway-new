@@ -15,6 +15,7 @@ import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import { Hash, getAddress } from 'viem';
 import { DisableRecoveryAlertsGuard } from '@/routes/recovery/guards/disable-recovery-alerts.guard';
 import { ISafeRepository } from '@/domain/safe/safe.repository.interface';
+import { Server } from 'net';
 
 const safeRepository = {
   getSafesByModule: jest.fn(),
@@ -41,7 +42,7 @@ class TestController {
 }
 
 describe('DisableRecoveryAlertsGuard guard tests', () => {
-  let app: INestApplication;
+  let app: INestApplication<Server>;
 
   const chainId = faker.string.numeric();
   const safeAddress = faker.finance.ethereumAddress();

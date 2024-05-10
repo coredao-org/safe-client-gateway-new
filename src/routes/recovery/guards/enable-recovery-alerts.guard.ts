@@ -40,7 +40,7 @@ export class EnableRecoveryAlertsGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
 
     const chainId = request.params['chainId'];
-    const safeAddress = request.params['safeAddress'];
+    const safeAddress: string = request.params['safeAddress'];
     const moduleAddress = request.body['moduleAddress'];
     const signer = request.body['signer'];
     const signature = request.headers['safe-wallet-signature'];

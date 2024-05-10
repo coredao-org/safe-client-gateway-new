@@ -13,6 +13,7 @@ import { TimestampGuard } from '@/routes/email/guards/timestamp.guard';
 import { TestAppProvider } from '@/__tests__/test-app.provider';
 import * as request from 'supertest';
 import { faker } from '@faker-js/faker';
+import { Server } from 'net';
 
 const MAX_ELAPSED_TIME_MS = 5_000;
 
@@ -25,7 +26,7 @@ class TestController {
 }
 
 describe('TimestampGuard tests', () => {
-  let app: INestApplication;
+  let app: INestApplication<Server>;
 
   beforeEach(async () => {
     jest.useFakeTimers();

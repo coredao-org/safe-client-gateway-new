@@ -14,6 +14,7 @@ import * as request from 'supertest';
 import { faker } from '@faker-js/faker';
 import { OnlySafeOwnerGuard } from '@/routes/common/guards/only-safe-owner.guard';
 import { ISafeRepository } from '@/domain/safe/safe.repository.interface';
+import { Server } from 'net';
 
 const safeRepository = {
   isOwner: jest.fn(),
@@ -40,7 +41,7 @@ class TestController {
 }
 
 describe('OnlySafeOwner guard tests', () => {
-  let app: INestApplication;
+  let app: INestApplication<Server>;
 
   beforeEach(async () => {
     jest.resetAllMocks();
