@@ -13,7 +13,8 @@ export const TimestampGuard = (maxElapsedTimeMs: number): Type<CanActivate> => {
     canActivate(context: ExecutionContext): boolean {
       const request = context.switchToHttp().getRequest();
 
-      const timestampRaw = request.headers['safe-wallet-signature-timestamp'];
+      const timestampRaw: string =
+        request.headers['safe-wallet-signature-timestamp'];
       const timestamp = parseInt(timestampRaw);
       if (isNaN(timestamp)) return false;
 
