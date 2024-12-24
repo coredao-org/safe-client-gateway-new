@@ -67,6 +67,7 @@ export default () => ({
             8453: { nativeCoin: 'ethereum', chainName: 'base' },
             84531: { nativeCoin: 'ethereum', chainName: 'base' },
             84532: { nativeCoin: 'ethereum', chainName: 'base' },
+            1114: {nativeCoin: 'coredaoorg', chainName: 'core' },
             1115: {nativeCoin: 'coredaoorg', chainName: 'core' },
             1116: {nativeCoin: 'coredaoorg', chainName: 'core' },
           },
